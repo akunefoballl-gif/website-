@@ -1,119 +1,238 @@
 <!DOCTYPE html>
-<html>
-<meta charset='UTF-8'/><meta content='width=device-width, initial-scale=1, user-scalable=1, minimum-scale=1, maximum-scale=5' name='viewport'/><meta content='IE=edge' http-equiv='X-UA-Compatible'/>
-
-  <link rel="icon" type="image/svg+xml" href="https://feeldreams.github.io/main-icon.png"> 
-  <link rel="apple-touch-icon" href="https://feeldreams.github.io/main-icon.png">
-  
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Caveat&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;700&display=swap" rel="stylesheet">
-  
-  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.19/dist/sweetalert2.all.min.js"></script>
-  <script src="https://kit.fontawesome.com/4f3ce16e3e.js" crossorigin="anonymous"></script>
-  <script src="https://unpkg.com/typeit@8.7.0/dist/index.umd.js"></script><link href="https://feeldreams.github.io/maukahkamu/style.css" rel="stylesheet" type="text/css" />
-  <script src="https://unpkg.com/scrollreveal"></script>
-  
+<html lang="id">
 <head>
-<title>Script HTML buat Kamu</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Absensi XI TJKT 3</title>
+
+<meta name="theme-color" content="#020617">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+
+<style>
+*{box-sizing:border-box;font-family:Segoe UI,Arial}
+body{
+margin:0;
+background:linear-gradient(135deg,#020617,#0f172a);
+color:#e5e7eb;
+}
+.container{max-width:1200px;margin:auto;padding:20px}
+header{
+padding:18px;border-radius:20px;
+background:rgba(255,255,255,.08);
+backdrop-filter:blur(18px);
+box-shadow:0 20px 40px rgba(0,0,0,.45);
+}
+header h1{margin:0;font-size:22px}
+main{margin-top:20px;display:grid;grid-template-columns:1fr 360px;gap:20px}
+.card{
+background:rgba(255,255,255,.06);
+border-radius:22px;padding:20px;
+backdrop-filter:blur(16px);
+box-shadow:0 20px 40px rgba(0,0,0,.35);
+}
+h3{margin-top:0}
+table{width:100%;border-collapse:separate;border-spacing:0 10px}
+thead th{text-align:left;font-size:14px;opacity:.8}
+tbody tr{background:#020617;border-radius:14px}
+td{padding:12px}
+.badge{padding:6px 14px;border-radius:20px;font-weight:700;font-size:13px}
+.hadir{background:#22c55e}
+.izin{background:#f59e0b}
+.sakit{background:#3b82f6}
+.alpha{background:#ef4444}
+label{font-size:14px;margin-top:12px;display:block}
+input,select{
+width:100%;margin-top:6px;padding:14px;
+border-radius:16px;border:none;
+background:#020617;color:white;font-size:16px;
+}
+button{
+width:100%;margin-top:18px;padding:16px;
+border:none;border-radius:18px;
+font-weight:700;font-size:16px;
+background:linear-gradient(135deg,#38bdf8,#8b5cf6);
+color:white;cursor:pointer;
+}
+.stat{
+margin-top:10px;background:#020617;
+padding:12px;border-radius:14px;
+display:flex;justify-content:space-between;
+}
+@media (max-width:768px){
+main{grid-template-columns:1fr}
+table{display:block;overflow-x:auto}
+}
+</style>
 </head>
+
 <body>
-	
-   <div class="overlay">
-     <!-- Teks Loading --><div class="loading-message">Hai kamu!<br>Tunggu dulu ya..</div>
-   </div>
-   
-   <!-- Ganti Audio di Sini, edit url di dalam src -->
-   <audio src="https://feeldreams.github.io/maukahkamu/seandainya.mp3" id="linkmp3" class="sembunyi"></audio>
-   
-   <!-- Pesan Pertama -->
-   <section class="first">
-       <!-- Background --><div class="wp"><img id="imgsatu" src="https://feeldreams.github.io/maukahkamu/wpsatu.jpg"/></div>
-       <!-- Stiker --><img id="first_stiker" class="stiker fade-in" src="https://feeldreams.github.io/bunga.gif"/>
-       
-       <h1 class="title">Hai Azizah imuet</h1>
-       <p class="flip">Aku boleh jujur engga niehh</p>
-       <p class="slide-up">Scroll ke bawahh yaa:)</p>
-  </section>
-  
-  <!-- Pesan Kedua -->
-  <section>
-      <!-- Background --><div class="wp"><img id="imgdua" src="https://feeldreams.github.io/maukahkamu/wpdua.jpg"/></div>
-      <!-- Stiker --><img class="stiker fade-in" src="https://feeldreams.github.io/pusn.gif"/>
-      
-      <h2 class="title">Sebenarnyaa....</h2>
-      <p class="slide-right">Rang kuh seneng ng ira</p>
-  </section>
-  
-  <!-- Pesan Ketiga dengan Animasi Ngetik -->
-  <section>
-  	<!-- Background --><div class="wp"><img id="imgtiga" src="https://feeldreams.github.io/maukahkamu/wptiga.jpg"/></div>
-      <p id="teksnimasi">kalau kamu tanya kenapa aku suka sama kamu, itu karena aku punya rasa nyaman tersendiri yang nggak akan aku temui di manapun. 
-kamu tahu? 
-nggak ada yang bisa bikin aku nyaman selain kamu....
-dan karena mengenalimu, aku merasakan apa itu Kenyamanan, apa itu kebahagiaan, dan apa itu Free Fire 🔫 😭😭</p>
-  </section>
-  
-  <!-- Pesan Keempat dengan Pertanyaan -->
-  <section>
-  	<!-- Background --><div class="wp"><img id="imgempat" src="https://feeldreams.github.io/maukahkamu/wpempat.jpg"/></div>
-      <!-- Stiker --><img class="stiker fade-in" src="https://feeldreams.github.io/bunga.gif"/>
-      
-      <h2 class="title">Intinya ayok kita habis magrib mabar Roblox</h2>
-      <p class="bold slide-right">Pesan Pertanyaan</p>
-      
-      <div id="Tombol">
-       <a id="By" onClick="fungsipertama()">Mauu</a>
-       <a id="Bn" onClick="fungsikedua()">Enggak</a>
-     </div>
-  </section>
-  
-  <!-- Pesan Akhir, edit di paling bawah di dalam Script -->
-  <section id="iniakhir">
-  	<!-- Background --><div class="wp" id="wpakhir"><img src="https://feeldreams.github.io/maukahkamu/wplima.jpg"/></div>
-      <!-- Stiker --><img id="stikerakhir" class="stiker fade-in" src="https://feeldreams.github.io/g5.gif"/>
-      
-      <img id="stikerakhir2" style="display:none" src="https://feeldreams.github.io/emawh.gif"/>
-      <h1 id="judulakhir"></h1>
-      <p id="kalimatakhir"></p>
-      <p id="palingakhir"></p>
-      <div id="TombolWA">
-        <a onClick="menuju()">Balas </a>
-      </div>
-  </section>
-  
-  <div id="initom" class="menu">
-  <a class='tombol' onclick="tes()">
-    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-down" viewBox="0 0 16 16"> <path fill-rule="evenodd" d="M8 1a.5.5 0 0 1 .5.5v11.793l3.146-3.147a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 .708-.708L7.5 13.293V1.5A.5.5 0 0 1 8 1z"/> </svg>
-  </a>
-  </div>
+<div class="container">
+
+<header>
+<h1>📋 Absensi Kelas XI TJKT 3</h1>
+</header>
+
+<main>
+
+<section class="card">
+<h3>Riwayat Absensi</h3>
+<table>
+<thead>
+<tr>
+<th>Nama</th>
+<th>Mapel</th>
+<th>Status</th>
+<th>Jam</th>
+</tr>
+</thead>
+<tbody id="riwayat"></tbody>
+</table>
+</section>
+
+<aside class="card">
+<h3>Form Absensi</h3>
+
+<label>Tanggal</label>
+<input type="date" id="tanggal">
+
+<label>Nama Siswa</label>
+<select id="nama"></select>
+
+<label>Mata Pelajaran</label>
+<select id="mapel"></select>
+
+<label>Status</label>
+<select id="status">
+<option value="hadir">Hadir</option>
+<option value="izin">Izin</option>
+<option value="sakit">Sakit</option>
+<option value="alpha">Alpha</option>
+</select>
+
+<button onclick="simpan()">Simpan Absensi</button>
+
+<button onclick="exportExcel()" style="margin-top:10px;background:linear-gradient(135deg,#22c55e,#16a34a)">
+📤 Export Excel
+</button>
+
+<hr style="opacity:.2;margin:20px 0">
+
+<h3>Statistik</h3>
+<div class="stat">Hadir <span id="h">0</span></div>
+<div class="stat">Izin <span id="i">0</span></div>
+<div class="stat">Sakit <span id="s">0</span></div>
+<div class="stat">Alpha <span id="a">0</span></div>
+</aside>
+
+</main>
+</div>
 
 <script>
-// Teks ketika klik tombol Mau
-function fungsipertama(){
-       fungsi=0;tes();
-       teksjudulakhir = "";
-       tekskalimatakhir = "";
+// fullscreen hp
+document.addEventListener("click",()=>{
+if(document.documentElement.requestFullscreen){
+document.documentElement.requestFullscreen();
+}
+},{once:true});
+
+// DATA SISWA
+const siswa=[
+"Aisyah","Akhmad","Andre","Aulia Hanif","Bayu","Bilal","Cardi","Dimas",
+"Juan","Ridho","Alpiya","Aulia Safitri","Echa","Fani Agustin","Khairunnisa",
+"Lestari Wulandari","Lusi","Marsya","Melati Sari","Metha Aulia","Metha Maheti",
+"Nadia Oktaviani","Natalya","Nur Idayah","Putri","Rina Puspitasari",
+"Rina Wati","Ririn","Salsabila Rahma","Saukiyah","Yani Maulidah"
+].sort((a,b)=>a.localeCompare(b,'id'));
+
+// MAPEL TKJ XI (20)
+const mapelList=[
+"Pendidikan Agama","PPKN","Bahasa Indonesia","Bahasa Inggris","Bahasa Jepang",
+"Matematika","Sejarah Indonesia","Informatika",
+"Administrasi Sistem Jaringan",
+"Teknologi Jaringan Kabel & Nirkabel",
+"Keamanan Jaringan",
+"Sistem Komputer",
+"Pemrograman Dasar",
+"Pemrograman Web",
+"Basis Data",
+"Virtualisasi",
+"Troubleshooting Jaringan",
+"Kewirausahaan",
+"Projek Kreatif & Kewirausahaan",
+"Pendidikan Jasmani"
+];
+
+const namaSelect=document.getElementById("nama");
+const mapelSelect=document.getElementById("mapel");
+
+siswa.forEach(n=>{
+let o=document.createElement("option");
+o.textContent=o.value=n;
+namaSelect.appendChild(o);
+});
+mapelList.forEach(m=>{
+let o=document.createElement("option");
+o.textContent=o.value=m;
+mapelSelect.appendChild(o);
+});
+
+tanggal.valueAsDate=new Date();
+let data=JSON.parse(localStorage.getItem("absen_xi_tjkt3")||"[]");
+
+function simpan(){
+let t=tanggal.value;
+let n=nama.value;
+let m=mapel.value;
+let s=status.value;
+
+if(data.find(x=>x.t===t && x.n===n && x.m===m)){
+alert("Sudah absen untuk mapel ini!");
+return;
 }
 
-// Teks ketika klik tombol Gamau
-function fungsikedua(){
-       fungsi=0;tes();
-       teksjudulakhir = "";
-       tekskalimatakhir = "";
+data.push({t,n,m,s,jam:new Date().toLocaleTimeString()});
+localStorage.setItem("absen_xi_tjkt3",JSON.stringify(data));
+render();
 }
 
-// Teks Akhir
-teksjudulakhir2 = "";
-tekspalingakhir = "";
-  
-// Teks yang akan dikirim ke WhatsApp
-pesanwhatsapp = "083800220021";
+function render(){
+riwayat.innerHTML="";
+let t=tanggal.value;
+let h=i=s=a=0;
 
-const body = document.querySelector("body"); initom.style="opacity:0;bottom:0;transition:none"; audio = new Audio('' + linkmp3.src); function berjatuhan() {const heart = document.createElement("div"); heart.className = "fas fa-heart"; heart.style.left = (Math.random() * 90)+"vw"; heart.style.animationDuration = (Math.random()*3)+2+"s"; body.appendChild(heart);} setInterval(function name(params) {var heartArr = document.querySelectorAll(".fa-heart"); if (heartArr.length > 100) {heartArr[0].remove()}},100);
+data.filter(x=>x.t===t).forEach(d=>{
+if(d.s=="hadir")h++;
+if(d.s=="izin")i++;
+if(d.s=="sakit")s++;
+if(d.s=="alpha")a++;
+
+riwayat.innerHTML+=`
+<tr>
+<td>${d.n}</td>
+<td>${d.m}</td>
+<td><span class="badge ${d.s}">${d.s}</span></td>
+<td>${d.jam}</td>
+</tr>`;
+});
+h.innerText=h;i.innerText=i;s.innerText=s;a.innerText=a;
+}
+
+function exportExcel(){
+if(data.length===0){alert("Belum ada data");return;}
+let csv="Tanggal,Nama,Mapel,Status,Jam\n";
+data.forEach(d=>{
+csv+=`${d.t},"${d.n}","${d.m}",${d.s},${d.jam}\n`;
+});
+let blob=new Blob([csv],{type:"text/csv"});
+let url=URL.createObjectURL(blob);
+let a=document.createElement("a");
+a.href=url;a.download="Absensi_XI_TJKT3.csv";a.click();
+URL.revokeObjectURL(url);
+}
+
+tanggal.onchange=render;
+render();
 </script>
-<script src="https://feeldreams.github.io/maukahkamu/main.js"></script>
 </body>
-        </html>
+</html>
